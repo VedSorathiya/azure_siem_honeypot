@@ -1,4 +1,4 @@
-# Part 1. Setup Azure Subscription
+![image](https://github.com/user-attachments/assets/53e1a431-1467-48f4-92f2-647c77bf8484)# Part 1. Setup Azure Subscription
 
 - **Create Free Azure Subscription**:  
   [https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account](https://azure.microsoft.com/en-us/pricing/purchase-options/azure-account)
@@ -13,28 +13,36 @@
 
 - Go to: [https://portal.azure.com](https://portal.azure.com) and search for **Virtual Machines**.
 - Create a new **Windows 10** virtual machine (choose an appropriate size).
-  ![image](https://github.com/user-attachments/assets/22ea26b2-e25d-4ce2-ad28-ec92c3bdbeac)
+![image](https://github.com/user-attachments/assets/22ea26b2-e25d-4ce2-ad28-ec92c3bdbeac)
 
 - Remember the **username and password**.
 - Go to the **Network Security Group** for your virtual machine and create a rule that allows **all traffic inbound**.
+![image](https://github.com/user-attachments/assets/86e80e85-3bd0-4ac0-bd05-718efb010291)
+
 - Log into your virtual machine and **turn off the Windows firewall**:  
   `Start -> wf.msc -> Properties -> All Off`
+![image](https://github.com/user-attachments/assets/1de21488-48ec-44b7-adb5-903252dc0293)
+
+- To test whether the firewall and NSG have been disabled or not, use ICMP protocol and ping the public ip address
+![image](https://github.com/user-attachments/assets/858aea86-4551-4af6-825a-f76097b66a11)
 
 ---
 
 # Part 3. Logging into the VM and Inspecting Logs
 
-- **Fail 3 logins** as “employee” (or some other username).
+- **Fail 3 logins** as “employee123” (or some other username).
+![image](https://github.com/user-attachments/assets/35a757aa-7d68-4e28-b5bc-ea7aafdc54b1)
+
 - Login to your virtual machine.
 - Open up **Event Viewer** and inspect the **Security Logs**.
-  - Look for 3 failed logins as “employee”, Event ID: `4625`.
-- Next, we are going to create a **central log repository** called a **Log Analytics Workspace (LAW)**.
+  - Look for failed logins as “employee123”, Event ID: `4625`.
 
 ---
 
 # Part 4. Log Forwarding and KQL
 
-- Create **Log Analytics Workspace**.
+- Create **Log Analytics Workspace** (a central log repository).
+
 - Create a **Sentinel Instance** and connect it to **Log Analytics**.
   - (Observe architecture)
 - Configure the “**Windows Security Events via AMA**” connector.
