@@ -1,5 +1,7 @@
 # Learning Objectives
 
+![image](https://github.com/user-attachments/assets/6e5d1c12-71ed-4f6a-9ece-d028ef7b3129)
+
 - Setting up and rolling out various Azure components including Virtual Machines (VMs), Log Analytics Workspaces, and Azure Sentinel 
 - Competence and experience with Microsoft Azure Sentinel, a SIEM (Security Information and Event Management) Log Management Tool
 - Third-party API Calls
@@ -149,7 +151,8 @@ We will now create a live **Attack Map** in Microsoft Sentinel to visualize logi
 3. Paste the contents of the pre-configured JSON.
 
 > **Workbook (Attack Map) JSON**:  
-> `map.json`
+> `windows-rdp-auth-fail.json`
+> `linux-ssh-auth-fail.json`
 
 ---
 
